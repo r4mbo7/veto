@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @animal.name %> (<%= link_to @animal.client.name, client_path(@animal.client) %>)</h1>
+
+<h2><%= @animal.categorie %></h2>
+<ul>
+<li>vaccin : <%= Time.at @animal.vaccin if !@animal.vaccin.nil? %></li>
+<li>API1 : <%= Time.at @animal.API1 if !@animal.API1.nil? %></li>
+<li>API2 : <%= Time.at @animal.API2 if !@animal.API2.nil? %></li>
+<li>API3 : <%= Time.at @animal.API3 if !@animal.API3.nil? %></li>
+<li>API4 : <%= Time.at @animal.API4 if !@animal.API4.nil? %></li>
+<li>APE1 : <%= Time.at @animal.APE1 if !@animal.APE1.nil? %></li>
+<li>APE2 : <%= Time.at @animal.APE2 if !@animal.APE2.nil? %></li>
+<li>APE3 : <%= Time.at @animal.APE3 if !@animal.APE3.nil? %></li>
+<li>consult : <%= Time.at @animal.consult if !@animal.consult.nil? %></li>
+</ul>
+
+Created at :<%= Time.at @animal.created_at %><br/>
+Updated at :<%= Time.at @animal.updated_at %><br/>
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>
