@@ -34,14 +34,20 @@
   <br/>
   <%= label_tag :client %>
   <%= form.select(:client_id, options_for_select(Client.all.map { |c| [c.name, c.id] })) %>
+  <br/>
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<br/>
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.datepicker');
   var instances = M.Datepicker.init(elems, null);
 });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, null);
+  });
 </script>

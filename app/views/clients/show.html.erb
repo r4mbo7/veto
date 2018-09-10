@@ -1,10 +1,17 @@
-<ul>
-<% @client.animals.each do |a| %>
-<li><%= link_to a.name, animal_path(a) %></li>
-<% end %>
-</ul>
-
-<%= link_to "New animal", new_animal_path(@client) %>
+<h1><%= @client.name %></h1>
+<div class="card">
+<div class="card-content">
+	<span class="card-title">Animals</span>
+	<ul>
+	<% @client.animals.each do |a| %>
+	<li><%= link_to a.name, animal_path(a) %></li>
+	<% end %>
+	</ul>
+	<div class="card-action">
+		<%= link_to "New animal", new_animal_path(@client) %>
+	</div>
+</div>
+</div>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
