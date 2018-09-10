@@ -68,6 +68,6 @@ class AnimalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def animal_params
-      params.require(:animal).permit(:client_id, :name, :categorie, :vaccin ,:API1 ,:API2 ,:API3 ,:API4 ,:APE1 ,:APE2 ,:APE3 ,:consult)
+      params.require(:animal).permit(:client_id, :name, :starting_date, :categorie, :vaccin ,:API1 ,:API2 ,:API3 ,:API4 ,:APE1 ,:APE2 ,:APE3 ,:consult)
     end
 end

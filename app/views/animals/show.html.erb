@@ -1,20 +1,22 @@
-<h1><%= @animal.name %> (<%= link_to @animal.client.name, client_path(@animal.client) %>)</h1>
-
-<h2><%= @animal.categorie %></h2>
+<h1><%= @animal.name %></h1>
+<h2>client : <%= link_to @animal.client.name, client_path(@animal.client) %></h2>
+<h2>categorie : <%= @animal.categorie %></h2>
 <ul>
-<li>vaccin : <%= Time.at @animal.vaccin if !@animal.vaccin.nil? %></li>
-<li>API1 : <%= Time.at @animal.API1 if !@animal.API1.nil? %></li>
-<li>API2 : <%= Time.at @animal.API2 if !@animal.API2.nil? %></li>
-<li>API3 : <%= Time.at @animal.API3 if !@animal.API3.nil? %></li>
-<li>API4 : <%= Time.at @animal.API4 if !@animal.API4.nil? %></li>
-<li>APE1 : <%= Time.at @animal.APE1 if !@animal.APE1.nil? %></li>
-<li>APE2 : <%= Time.at @animal.APE2 if !@animal.APE2.nil? %></li>
-<li>APE3 : <%= Time.at @animal.APE3 if !@animal.APE3.nil? %></li>
-<li>consult : <%= Time.at @animal.consult if !@animal.consult.nil? %></li>
+	<li>starting date : <%= @animal.starting_date.strftime("%d/%m/%Y %H:%M:%S") if !@animal.starting_date.nil? %></li>
+	<li>vaccin : <%= @animal.vaccin.strftime("%d/%m/%Y %H:%M:%S") if !@animal.vaccin.nil? %></li>
+	<li>API1 : <%= @animal.API1.strftime("%d/%m/%Y %H:%M:%S") if !@animal.API1.nil? %></li>
+	<li>API2 : <%= @animal.API2.strftime("%d/%m/%Y %H:%M:%S") if !@animal.API2.nil? %></li>
+	<li>API3 : <%= @animal.API3.strftime("%d/%m/%Y %H:%M:%S") if !@animal.API3.nil? %></li>
+	<li>API4 : <%= @animal.API4.strftime("%d/%m/%Y %H:%M:%S") if !@animal.API4.nil? %></li>
+	<li>APE1 : <%= @animal.APE1.strftime("%d/%m/%Y %H:%M:%S") if !@animal.APE1.nil? %></li>
+	<li>APE2 : <%= @animal.APE2.strftime("%d/%m/%Y %H:%M:%S") if !@animal.APE2.nil? %></li>
+	<li>APE3 : <%= @animal.APE3.strftime("%d/%m/%Y %H:%M:%S") if !@animal.APE3.nil? %></li>
+	<li>consult : <%= @animal.consult.strftime("%d/%m/%Y %H:%M:%S") if !@animal.consult.nil? %></li>
 </ul>
 
-Created at :<%= Time.at @animal.created_at %><br/>
-Updated at :<%= Time.at @animal.updated_at %><br/>
+Created at :<%= @animal.created_at.strftime("%d/%m/%Y %H:%M:%S") %><br/>
+Updated at :<%= @animal.updated_at.strftime("%d/%m/%Y %H:%M:%S") %><br/>
 
+<br/>
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>

@@ -18,15 +18,17 @@
   <%= text_field :animal, :categorie %>
   <br>
 <ul>
-<li>vaccin : <%= text_field :animal, :vaccin %></li>
-<li>API1 : <%= text_field :animal, :API1 %></li>
-<li>API2 : <%= text_field :animal, :API2 %></li>
-<li>API3 : <%= text_field :animal, :API3 %></li>
-<li>API4 : <%= text_field :animal, :API4 %></li>
-<li>APE1 : <%= text_field :animal, :APE1 %></li>
-<li>APE2 : <%= text_field :animal, :APE2 %></li>
-<li>APE3 : <%= text_field :animal, :APE3 %></li>
-<li>consult : <%= text_field :animal, :consult %></li>
+
+<li>starting_date : <%= text_field :animal, :starting_date, class: "datepicker" %></li>
+<li>vaccin : <%= text_field :animal, :vaccin, class: "datepicker" %></li>
+<li>API1 : <%= text_field :animal, :API1, class: "datepicker" %></li>
+<li>API2 : <%= text_field :animal, :API2, class: "datepicker" %></li>
+<li>API3 : <%= text_field :animal, :API3, class: "datepicker" %></li>
+<li>API4 : <%= text_field :animal, :API4, class: "datepicker" %></li>
+<li>APE1 : <%= text_field :animal, :APE1, class: "datepicker" %></li>
+<li>APE2 : <%= text_field :animal, :APE2, class: "datepicker" %></li>
+<li>APE3 : <%= text_field :animal, :APE3, class: "datepicker" %></li>
+<li>consult : <%= text_field :animal, :consult, class: "datepicker" %></li>
 </ul>
 
   <br/>
@@ -36,3 +38,10 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems, null);
+});
+</script>
