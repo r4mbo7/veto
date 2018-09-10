@@ -12,7 +12,7 @@
   <% end %>
 
   <%= label_tag :client %>
-  <%= form.select(:client_id, options_for_select(Client.all.order(:name).map { |c| [c.name, c.id] })) %>
+  <%= form.select(:client_id, options_for_select((Client.all.order(:name).map { |c| [c.name, c.id] }).unshift(["Select client", nil]))) %>
   <br/>
   <%= label_tag :name %>
   <%= text_field :animal, :name %>
