@@ -11,9 +11,10 @@
     </div>
   <% end %>
 
+  <%= label_tag :name %>
   <%= text_field :client, :name %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn" %>
   </div>
 <% end %>

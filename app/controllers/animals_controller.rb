@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
   # GET /animals
   # GET /animals.json
   def index
-    @animals = Animal.all
+    @animals = Animal.all.order(:name)
   end
 
   # GET /animals/1
@@ -15,16 +15,19 @@ class AnimalsController < ApplicationController
   # GET /animals/new
   def new
     @animal = Animal.new
+    @selected = params[:format]
   end
 
   # GET /animals/1/edit
   def edit
+    @selected = @animal.client_id
   end
 
   # POST /animals
   # POST /animals.json
   def create
     @animal = Animal.new(animal_params)
+    @selected = @animal.client_id
     respond_to do |format|
       if @animal.save
         format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
@@ -39,6 +42,7 @@ class AnimalsController < ApplicationController
   # PATCH/PUT /animals/1
   # PATCH/PUT /animals/1.json
   def update
+    @selected = @animal.client_id
     respond_to do |format|
       if @animal.update(animal_params)
         format.html { redirect_to @animal, notice: 'Animal was successfully updated.' }
