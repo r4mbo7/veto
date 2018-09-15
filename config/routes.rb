@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'restore/create'
+  post 'restore/load'
+
   devise_for :users
   resources :animals
   resources :clients

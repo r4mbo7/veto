@@ -1,7 +1,7 @@
 <h1>Clients</h1>
 
 <%= link_to 'New Client', new_client_path %> | 
-<%= link_to "Show animals", animals_path %>
+<%= link_to "Show animals", animals_path %> |
 
 <table>
   <thead>
@@ -26,3 +26,18 @@
 </table>
 
 <br>
+<br>
+<br>
+<br>
+<br>
+<div class="divider"></div>
+<h1>Backup</h1>
+
+<h5>Create backup</h5>
+<%= link_to "Get backup", restore_create_path, class: "btn green" %>
+
+<h5>Load backup</h5>
+<%= form_tag restore_load_url, :multipart => true  do |f| %>
+  <%= file_field_tag :file %><br/>
+  <%= submit_tag "load backup", class: "btn red" %>
+<% end %>
