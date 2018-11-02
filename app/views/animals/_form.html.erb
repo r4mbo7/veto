@@ -44,7 +44,9 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.datepicker');
-  var instances = M.Datepicker.init(elems, null);
+  var instances = M.Datepicker.init(elems, {
+    showClearBtn: true
+  });
 });
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
