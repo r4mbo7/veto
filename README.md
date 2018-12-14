@@ -1,5 +1,7 @@
 # Vetoplan
 
+Very basic and simple app to manage client's animals vaccins.
+
 ## Features
 
 * Login portal
@@ -9,8 +11,24 @@
 * Generate a backup file
 * Restore from a backup file
 
+**Index**
 ![index](https://github.com/r4mbo7/veto/blob/master/app/assets/images/index.png)
+
+**Animal page**
 ![calendar](https://github.com/r4mbo7/veto/blob/master/app/assets/images/screen-calendar.png)
+
+Vaccination plan includes these informations as date :
+
+* starting
+* vaccin
+* API1
+* API2
+* API3
+* API4
+* APE1
+* APE2
+* APE3
+* consult
 
 ## Maintainability
 
@@ -26,7 +44,7 @@ ruby-2.4.1
 
 * Database creation
 
-From [database configuration file](https://github.com/r4mbo7/veto/blob/master/config/database.yml)
+Accoring to the [database configuration file](https://github.com/r4mbo7/veto/blob/master/config/database.yml)
 
 ```
 development:
@@ -37,8 +55,7 @@ development:
   password: veto
 ```
 
-[reminder] To create postgresql user
-
+Reminder, how to create postgresql user...
 ```
 sudo -iu postgres
 createuser --interactive -P veto
@@ -50,8 +67,10 @@ createuser --interactive -P veto
 rails db:create db:migrate db:seed
 ```
 
-From [seed file](https://github.com/r4mbo7/veto/blob/master/db/seed.rb), **default account credentials are**
+According to the [seed file](https://github.com/r4mbo7/veto/blob/master/db/seed.rb), **default account credentials are :**
+
 email : cliniquedes3vallees@gmail.com
+
 pass : vermenton
 
 * Deployment instructions
@@ -59,9 +78,9 @@ pass : vermenton
 ```
 rails s
 ```
-[localhost:3000](localhost:3000)
+[localhost:3000](http://localhost:3000)
 
-on [scalingo.io (this is my referral link, please use it to thay thanks :+1:)](https://sclng.io/r/bf4426ca0da35884) "deploy magically your code in 3 minutes"
+On [scalingo.io (this is my referral link, please use it to thay thanks :+1:)](https://sclng.io/r/bf4426ca0da35884) "deploy magically your code in 3 minutes"
 ```
 git push scalingo master
 ```
